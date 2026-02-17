@@ -1,0 +1,10 @@
+# Ejecutables y objetos
+*.exe
+*.obj
+obj/
+
+# Datos pesados (PDBs)
+data/*.bin
+
+# Archivos de configuración de VS Code
+.vscode/
