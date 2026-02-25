@@ -1,29 +1,32 @@
 #include "../include/state.hpp"
 #include <vector>
-#include <algorithm> 
-// Constructores
-State::State() : pieces(12, 0), g(0) {} 
-State::State(std::vector<int> p) : pieces(p), g(0) {} 
+#include <algorithm>
 
-// Acción: Mover a la izquierda - Mueve todas las piezas un lugar a la izquierda 
+// Constructor por defecto: inicializa el vector de piezas en cero y g en cero
+State::State() : pieces(12, 0), g(0) {}
+
+// Constructor que recibe un vector de piezas, inicializa g en cero
+State::State(std::vector<int> p) : pieces(p), g(0) {}
+
+// Mueve todas las piezas una posición a la izquierda
 void State::shiftLeft() {
-    std::rotate(pieces.begin(), pieces.begin() + 1, pieces.end()); 
+    std::rotate(pieces.begin(), pieces.begin() + 1, pieces.end());
 }
 
-// Acción: Mover a la derecha - Mueve todas las piezas un lugar a la derecha 
+// Mueve todas las piezas una posición a la derecha
 void State::shiftRight() {
     std::rotate(pieces.rbegin(), pieces.rbegin() + 1, pieces.rend());
 }
 
-// Acción: Rotar - Da la vuelta a las primeras cuatro piezas 
+// Invierte las primeras cuatro piezas del vector
 void State::rotateK() {
-    std::reverse(pieces.begin(), pieces.begin() + 4); 
+    std::reverse(pieces.begin(), pieces.begin() + 4);
 }
 
-// Verifica si el estado es la meta (1 al 12 en orden) 
+// Verifica si el estado actual es el objetivo (piezas ordenadas del 1 al 12)
 bool State::isGoal() {
     for(int i = 0; i < 12; i++) {
-        if(pieces[i] != i + 1) return false; 
+        if(pieces[i] != i + 1) return false;
     }
-    return true; 
+    return true;
 }
