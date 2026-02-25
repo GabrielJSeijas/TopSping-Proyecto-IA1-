@@ -16,8 +16,6 @@ Estructura del Proyecto
 
     src/: Archivos de implementación (.cpp).
     include/: Archivos de cabecera (.hpp).
-    data/: Carpeta donde se almacenan las PDBs generadas en formato binario (.bin).
-    obj/: Archivos objeto temporales.
 
 Descripción de los módulos
 
