@@ -26,7 +26,7 @@ int main(int argc, char* argv[]) {
     std::vector<int> pattern1 = {1, 2, 3, 4};
     std::vector<int> pattern2 = {9, 10, 11, 12};
     
-    std::cout << "Inicializando Heuristica PDB ..." << std::endl;
+    std::cout << "Inicializando Heuristica PDB..." << std::endl;
     PDB pdb1(pattern1);
     PDB pdb2(pattern2);
 
@@ -38,7 +38,7 @@ int main(int argc, char* argv[]) {
     State initialState(start_pieces);
     Solver solver(pdb1, pdb2); 
 
-    std::cout << "Buscando solucion ..." << std::endl;
+    std::cout << "Buscando solucion..." << std::endl;
     Solution result = solver.solve(initialState);
 
     // Mostramos los resultados por pantalla y los guardamos en el archivo de salida
